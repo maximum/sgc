@@ -1,0 +1,29 @@
+<h1>Vagas</h1>
+
+<table>
+  <tr>
+    <th>Descriacao</th>
+    <th>Salario</th>
+    <th>Experiencia</th>
+    <th>Formacao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vagas.each do |vaga| %>
+  <tr>
+    <td><%= vaga.descriacao %></td>
+    <td><%= vaga.salario %></td>
+    <td><%= vaga.experiencia %></td>
+    <td><%= vaga.formacao %></td>
+    <td><%= link_to 'Show', vaga %></td>
+    <td><%= link_to 'Edit', edit_vaga_path(vaga) %></td>
+    <td><%= link_to 'Destroy', vaga, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vaga', new_vaga_path %>

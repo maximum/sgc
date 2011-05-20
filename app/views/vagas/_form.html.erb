@@ -1,0 +1,33 @@
+<%= form_for(@vaga) do |f| %>
+  <% if @vaga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vaga.errors.count, "error") %> prohibited this vaga from being saved:</h2>
+
+      <ul>
+      <% @vaga.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descriacao %><br />
+    <%= f.text_field :descriacao %>
+  </div>
+  <div class="field">
+    <%= f.label :salario %><br />
+    <%= f.text_field :salario %>
+  </div>
+  <div class="field">
+    <%= f.label :experiencia %><br />
+    <%= f.text_field :experiencia %>
+  </div>
+  <div class="field">
+    <%= f.label :formacao %><br />
+    <%= f.text_field :formacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

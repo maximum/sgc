@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  descriacao: MyString
+  salario: 9.99
+  experiencia: MyString
+  formacao: MyString
+
+two:
+  descriacao: MyString
+  salario: 9.99
+  experiencia: MyString
+  formacao: MyString

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Descriacao:</b>
+  <%= @vaga.descriacao %>
+</p>
+
+<p>
+  <b>Salario:</b>
+  <%= @vaga.salario %>
+</p>
+
+<p>
+  <b>Experiencia:</b>
+  <%= @vaga.experiencia %>
+</p>
+
+<p>
+  <b>Formacao:</b>
+  <%= @vaga.formacao %>
+</p>
+
+
+<%= link_to 'Edit', edit_vaga_path(@vaga) %> |
+<%= link_to 'Back', vagas_path %>

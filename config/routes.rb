@@ -1,4 +1,16 @@
 Sgc::Application.routes.draw do
+  resources :candidatos
+
+  resources :cargos
+
+  resources :empresas
+  resources :vagas
+  
+  get "home/index"  
+  
+  root :to => "home#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

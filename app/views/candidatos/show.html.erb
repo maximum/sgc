@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @candidato.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @candidato.endereco %>
+</p>
+
+<p>
+  <b>Formacao:</b>
+  <%= @candidato.formacao %>
+</p>
+
+<p>
+  <b>Experiencia:</b>
+  <%= @candidato.experiencia %>
+</p>
+
+<p>
+  <b>Pretencao salarial:</b>
+  <%= @candidato.pretencao_salarial %>
+</p>
+
+
+<%= link_to 'Edit', edit_candidato_path(@candidato) %> |
+<%= link_to 'Back', candidatos_path %>

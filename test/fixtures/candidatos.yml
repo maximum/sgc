@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  endereco: MyString
+  formacao: MyString
+  experiencia: MyString
+  pretencao_salarial: 9.99
+
+two:
+  nome: MyString
+  endereco: MyString
+  formacao: MyString
+  experiencia: MyString
+  pretencao_salarial: 9.99
