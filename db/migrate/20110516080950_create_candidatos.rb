@@ -3,9 +3,12 @@ class CreateCandidatos < ActiveRecord::Migration
     create_table :candidatos do |t|
       t.string :nome
       t.string :endereco
-      t.string :formacao
-      t.string :experiencia
+      t.integer :formacao
+      t.integer :experiencia
       t.decimal :pretencao_salarial
+      t.string :cidade
+      t.integer :uf
+      t.integer :curso
 
       t.timestamps
     end

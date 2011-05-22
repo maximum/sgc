@@ -16,6 +16,14 @@
     <%= f.text_field :descricao %>
   </div>
   <div class="field">
+    <%= f.label :uf %><br />
+    <%= select(:vaga, :uf, [['MG', 1], ['SP', 2]]) %>
+  </div>  
+  <div class="field">
+    <%= f.label :cidade %><br />
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
     <%= f.label :salario %><br />
     <%= f.text_field :salario %>
   </div>
@@ -26,7 +34,12 @@
   <div class="field">
     <%= f.label :formacao %><br />
     <%= f.text_field :formacao %>
+  </div>  
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= select(:vaga, :curso, [['Sistemas de Informação', 1], ['Ciência da Computação', 2]]) %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>

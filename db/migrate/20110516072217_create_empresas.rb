@@ -4,6 +4,8 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :nome
       t.string :cnpj
       t.string :endereco
+      t.integer :uf
+      t.string :cidade
 
       t.timestamps
     end
