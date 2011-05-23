@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
      def require_no_user
        if current_user
          store_location
-         flash[:notice] = "Você deve estar deslogado para acessar esta página"
+         #flash[:notice] = "Você deve estar deslogado para acessar esta página"
          redirect_to account_url
          return false
        end
