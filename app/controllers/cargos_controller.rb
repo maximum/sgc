@@ -1,4 +1,6 @@
 class CargosController < ApplicationController
+  filter_resource_access
+  
   # GET /cargos
   # GET /cargos.xml
   def index

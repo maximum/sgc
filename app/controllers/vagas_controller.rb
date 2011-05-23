@@ -1,4 +1,6 @@
 class VagasController < ApplicationController
+  filter_resource_access
+  
   # GET /vagas
   # GET /vagas.xml
   def index

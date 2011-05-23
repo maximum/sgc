@@ -1,4 +1,6 @@
 class CandidatosController < ApplicationController
+  filter_resource_access
+  
   # GET /candidatos
   # GET /candidatos.xml
   def index

@@ -6,6 +6,13 @@ Sgc::Application.routes.draw do
   resources :empresas
   resources :vagas
   
+  resource :user_session
+  resource :account, :controller => "users"
+  resources :users
+  
+  match "login", :to => "user_sessions#new", :as => "login"
+  match "logout", :to => "user_sessions#destroy", :as => "logout"
+  
   get "home/index"  
   
   root :to => "home#index"

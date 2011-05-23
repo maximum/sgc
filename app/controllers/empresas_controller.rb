@@ -1,4 +1,6 @@
 class EmpresasController < ApplicationController
+  filter_resource_access
+  
   # GET /empresas
   # GET /empresas.xml
   def index

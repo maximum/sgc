@@ -39,6 +39,11 @@
     <%= f.label :curso %><br />
     <%= select(:vaga, :curso, [['Sistemas de Informação', 1], ['Ciência da Computação', 2]]) %>
   </div>
+  <div class="field">
+    <%= f.label :data_limite %><br />
+    <%= datetime_select("vaga", "data_limite", :default => 3.days.from_now) %>
+  </div>
+    
   <br />
   <div class="actions">
     <%= f.submit %>
