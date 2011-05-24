@@ -27,7 +27,8 @@ class EmpresasController < ApplicationController
   # GET /empresas/new.xml
   def new
     @empresa = Empresa.new
-
+    @empresa.build_user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @empresa }

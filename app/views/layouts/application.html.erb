@@ -12,11 +12,11 @@
   <div id="user_nav">
     <% if current_user %>
           Bem-vindo <%=h current_user.login %>!
-      <%= link_to "Editar usuário", edit_user_path(:current) %> |
+      <%= link_to "Editar usuário", edit_candidato_path(:current) %> |
       <%= link_to "Logout", logout_path %>
     <% else %>
-      <%= link_to "Registrar Candidato", new_user_path(:type => 'candidato') %> |
-      <%= link_to "Registrar Empresa", new_user_path(:type => 'empresa') %> |
+      <%= link_to "Registrar Candidato", new_candidato_path %> |      
+      <%= link_to "Registrar Empresa", new_empresa_path %> |
       <%= link_to "Login", login_path %>
     <% end %>
   </div>

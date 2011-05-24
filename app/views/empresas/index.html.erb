@@ -3,8 +3,10 @@
 <table>
   <tr>
     <th>Nome</th>
-    <th>Cnpj</th>
+    <th>CNPJ</th>
     <th>Endereco</th>
+    <th>Cidade</th>
+    <th>UF</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +17,8 @@
     <td><%= empresa.nome %></td>
     <td><%= empresa.cnpj %></td>
     <td><%= empresa.endereco %></td>
+    <td><%= empresa.cidade %></td>
+    <td><%= empresa.uf %></td>        
     <td><%= link_to 'Show', empresa %></td>
     <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
     <td><%= link_to 'Destroy', empresa, :confirm => 'Are you sure?', :method => :delete %></td>

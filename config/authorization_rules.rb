@@ -10,8 +10,7 @@ authorization do
   end
   
   role :guest do
-    has_permission_on :candidatos, :to => [:new, :create]  
+    has_permission_on :candidatos, :to => [:new, :create]
+    has_permission_on :empresas, :to => [:new, :create]
   end
-  
-  
 end

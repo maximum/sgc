@@ -23,6 +23,19 @@
     <%= f.label :endereco %><br />
     <%= f.text_field :endereco %>
   </div>
+  <div class="field">
+    <%= f.label :cidade %><br />
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label :uf, "UF" %><br />
+    <%= f.text_field :uf %>
+  </div>
+  
+  <%= f.fields_for :user do |user| %>
+    <%= render :partial => '/users/fields_for_form', :locals => {:f => user} %>
+  <% end %>  
+  
   <div class="actions">
     <%= f.submit %>
   </div>
