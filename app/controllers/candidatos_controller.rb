@@ -27,7 +27,8 @@ class CandidatosController < ApplicationController
   # GET /candidatos/new.xml
   def new
     @candidato = Candidato.new
-
+    @candidato.build_user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @candidato }

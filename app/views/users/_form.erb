@@ -10,17 +10,26 @@
   </div>
 <% end %>
 
-<%= form.label :login %><br />
-<%= form.text_field :login %><br />
+<%= f.label :login %><br />
+<%= f.text_field :login %><br />
 <br />
-<%= form.label :password, form.object.new_record? ? nil : "Alterar a senha" %><br />
-<%= form.password_field :password %><br />
+<%= f.label :password, form.object.new_record? ? nil : "Alterar a senha" %><br />
+<%= f.password_field :password %><br />
 <br />
-<%= form.label :password_confirmation %><br />
-<%= form.password_field :password_confirmation %><br />
-<br />
+<%= f.label :password_confirmation %><br />
+<%= f.password_field :password_confirmation %><br />
 
-<%= form.label :role_id %><br />
-<%= form.text_field :role_id %><br />
+  <%= render :partial => '/users/fields_for_form', :locals => {:form => f} %>
+
+
+<% if params[:type] == "empresa" -%>
+  <% @user.userble == nil ? @user.userble = Empresa.new : nil %>
+  <%= render :partial => '/empresas/fields_for_form', :locals => {:form => form} %>
+  <%= form.hidden_field :role_id, :value => Role.find_by_name('empresa') %>  
+<% else %>
+  <% @user.userble == nil ? @user.userble = Candidato.new : nil %>
+  <%= render :partial => '/candidatos/fields_for_form', :locals => {:form => form} %>
+  <%= form.hidden_field :role_id, :value => Role.find_by_name('candidato') %>
+<% end %>
 
   

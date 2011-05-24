@@ -44,6 +44,10 @@
     <%= f.text_field :pretencao_salarial %>
   </div>
   
+  <%= f.fields_for :user do |user| %>
+    <%= render :partial => '/users/fields_for_form', :locals => {:f => user} %>
+  <% end %>
+    
   <div class="actions">
     <%= f.submit %>
   </div>

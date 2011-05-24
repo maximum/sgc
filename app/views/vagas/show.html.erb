@@ -20,6 +20,10 @@
   <%= @vaga.formacao %>
 </p>
 
+<p>
+  <b>Empresa:</b>
+  <%= @vaga.empresa.nome %>
+</p>
 
 <%= link_to 'Edit', edit_vaga_path(@vaga) %> |
 <%= link_to 'Back', vagas_path %>

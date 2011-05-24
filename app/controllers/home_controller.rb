@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    #@empresas = Empresa.all()
+    @empresa = Empresa.all()
   end
 
 end

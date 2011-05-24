@@ -43,7 +43,8 @@ class VagasController < ApplicationController
   # POST /vagas.xml
   def create
     @vaga = Vaga.new(params[:vaga])
-
+    @vaga.empresa = @current_user.userble
+    
     respond_to do |format|
       if @vaga.save
         format.html { redirect_to(@vaga, :notice => 'Vaga was successfully created.') }
