@@ -25,20 +25,19 @@
   </div>
   <div class="field">
     <%= f.label :uf, "UF" %><br />
-    <%#= f.text_field :uf %>
-    <%= select(:candidato, :uf, options_for_select(ADDRESS_TYPES)) %>    
+    <%= select(:candidato, :uf, options_for_select(UF_ADDRESS_TYPES.sort)) %>    
   </div>
   <div class="field">
     <%= f.label :curso %><br />
-    <%= select(:candidato, :curso, [['Administração', 1], ['Arquitetura', 2], ['Ciências Contábeis', 3], ['Comunicação Social', 4], ['Direito', 5], ['Engenharia Civil', 6], ['Engenharia de Computação', 5],  ['Psicologia', 6], ['Publicidade e Propaganda', 7], ['Sistemas de Informação', 8] ]) %>
+    <%= select(:candidato, :curso, options_for_select(CURSO_TYPES.sort)) %>
   </div>
   <div class="field">
     <%= f.label :formacao %><br />
-    <%= f.text_field :formacao %>
+    <%= select(:candidato, :formacao, options_for_select(FORMACAO_TYPES.sort)) %>
   </div>
   <div class="field">
     <%= f.label :experiencia %><br />
-    <%= f.text_field :experiencia %>
+    <%= f.text_area :experiencia %>
   </div>
   <div class="field">
     <%= f.label :pretencao_salarial %><br />
