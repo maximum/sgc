@@ -17,13 +17,17 @@
   </div>
   <div class="field">
     <%= f.label :uf %><br />
-    <%= select(:vaga, :uf, [['MG', 1], ['SP', 2]]) %>
+    <%= select :vaga, :uf, UF_ADDRESS_TYPES.sort, {:include_blank => 'Selecione um estado'}%>
   </div>  
   <div class="field">
     <%= f.label :cargo %><br />
-    <%= select(:vaga, :cargo, Cargo.all.collect {|c| c.descricao}) %>
+    <%#= collection_select :vaga, :cargo_id, Cargo.all.collect {|c| c.descricao}, :id, :descricao %>
+    <%#= select("vaga", "cargo_id", Cargo.all {|c| [c.cargo.descricao, c.cargo.id ] }, { :include_blank => true }) %>
+    <%#= select :vaga, :cargo_id, Cargo.all %>
+    <%#= select :cargo, Cargo.all.collect {|c| [c.descricao, c.id]} %>
+        
+    <%= select(:vaga, :cargo_id, Cargo.all.collect {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'}) %>
   </div>
-  
   <div class="field">
     <%= f.label :cidade %><br />
     <%= f.text_field :cidade %>
@@ -34,15 +38,15 @@
   </div>
   <div class="field">
     <%= f.label :experiencia %><br />
-    <%= f.text_field :experiencia %>
+    <%= select :vaga, :experiencia, EXPERIENCIA_TYPES.sort_by {|k,v| v.to_s } %>
   </div>
   <div class="field">
     <%= f.label :formacao %><br />
-    <%= f.text_field :formacao %>
+    <%= select :vaga, :formacao, FORMACAO_TYPES.sort_by {|k,v| v.to_s } %>
   </div>  
   <div class="field">
     <%= f.label :curso %><br />
-    <%= select(:vaga, :curso, [['Sistemas de Informação', 1], ['Ciência da Computação', 2]]) %>
+    <%= select :vaga, :curso, CURSO_TYPES.sort %>
   </div>
   <div class="field">
     <%= f.label :data_limite %><br />

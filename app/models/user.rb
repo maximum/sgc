@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
     roles.map do |role|
       role.name.underscore.to_sym
     end
-  end
+  end  
 end

@@ -28,8 +28,8 @@
     <%= f.text_field :cidade %>
   </div>
   <div class="field">
-    <%= f.label :uf, "UF" %><br />
-    <%= f.text_field :uf %>
+    <%= f.label :uf, "Estado" %><br />
+    <%= select :empresa, :uf, UF_ADDRESS_TYPES.sort %>
   </div>
   
   <%= f.fields_for :user do |user| %>
