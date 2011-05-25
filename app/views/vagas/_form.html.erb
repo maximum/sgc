@@ -16,16 +16,15 @@
     <%= f.text_field :descricao %>
   </div>
   <div class="field">
+    <%= f.label :num_vagas, "Quantidade de vagas" %><br />
+    <%= select(:vaga, :num_vagas, (1..99).to_a) %>
+  </div>
+  <div class="field">
     <%= f.label :uf %><br />
     <%= select :vaga, :uf, UF_ADDRESS_TYPES.sort, {:include_blank => 'Selecione um estado'}%>
   </div>  
   <div class="field">
     <%= f.label :cargo %><br />
-    <%#= collection_select :vaga, :cargo_id, Cargo.all.collect {|c| c.descricao}, :id, :descricao %>
-    <%#= select("vaga", "cargo_id", Cargo.all {|c| [c.cargo.descricao, c.cargo.id ] }, { :include_blank => true }) %>
-    <%#= select :vaga, :cargo_id, Cargo.all %>
-    <%#= select :cargo, Cargo.all.collect {|c| [c.descricao, c.id]} %>
-        
     <%= select(:vaga, :cargo_id, Cargo.all.collect {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'}) %>
   </div>
   <div class="field">

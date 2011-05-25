@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110522025310) do
+ActiveRecord::Schema.define(:version => 20110525203738) do
 
   create_table "candidatos", :force => true do |t|
     t.string   "nome"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110522025310) do
     t.integer  "curso"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "cargos", :force => true do |t|
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20110522025310) do
     t.datetime "data_limite"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "num_vagas"
   end
 
 end
