@@ -4,11 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
 #  before_filter { |c| Authorization.current_user = c.current_user }  
-  
+   
   #filter_parameter_logging :password, :password_confirmation
       helper_method :current_user_session, :current_user
 
   private
+#FIXME: Fix authentication checking, confliting with lib/authenticated_system.rb
      def current_user_session
        return @current_user_session if defined?(@current_user_session)
        @current_user_session = UserSession.find

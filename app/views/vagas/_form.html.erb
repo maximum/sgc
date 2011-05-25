@@ -20,6 +20,11 @@
     <%= select(:vaga, :uf, [['MG', 1], ['SP', 2]]) %>
   </div>  
   <div class="field">
+    <%= f.label :cargo %><br />
+    <%= select(:vaga, :cargo, Cargo.all.collect {|c| c.descricao}) %>
+  </div>
+  
+  <div class="field">
     <%= f.label :cidade %><br />
     <%= f.text_field :cidade %>
   </div>

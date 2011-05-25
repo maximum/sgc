@@ -25,6 +25,13 @@
   <%= @candidato.pretencao_salarial %>
 </p>
 
+<p>
+  <b>UF:</b>
+  <%= ADDRESS_TYPES[@candidato.uf]%>
+</p>
+
+
+
 
 <%= link_to 'Edit', edit_candidato_path(@candidato) %> |
 <%= link_to 'Back', candidatos_path %>

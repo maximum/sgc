@@ -25,7 +25,8 @@
   </div>
   <div class="field">
     <%= f.label :uf, "UF" %><br />
-    <%= f.text_field :uf %>
+    <%#= f.text_field :uf %>
+    <%= select(:candidato, :uf, options_for_select(ADDRESS_TYPES)) %>    
   </div>
   <div class="field">
     <%= f.label :curso %><br />
