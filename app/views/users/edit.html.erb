@@ -1,6 +1,6 @@
 <h1>Editar meu usuário</h1>
 
-<%= form_for @user, :url => account_path do |f| %>
+<%= form_for @user, :url => users_path do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this vaga from being saved:</h2>
@@ -12,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-  <%= render :partial => "form", :object => f %>
+  <%= render :partial => "form", :locals => {:f => f} %>
   <%= f.submit "Update" %>
 <% end %>
 

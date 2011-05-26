@@ -22,7 +22,7 @@
 
 <p>
   <b>Cargo:</b>
-  <%= @vaga.cargo %>
+  <%= @vaga.cargo ? @vaga.cargo.descricao : nil %>
 </p>
 
 <p>

@@ -13,7 +13,7 @@
 <%= f.label :login %><br />
 <%= f.text_field :login %><br />
 <br />
-<%= f.label :password, form.object.new_record? ? nil : "Alterar a senha" %><br />
+<%= f.label :password, @user.userble.new_record? ? nil : "Alterar a senha" %><br />
 <%= f.password_field :password %><br />
 <br />
 <%= f.label :password_confirmation %><br />

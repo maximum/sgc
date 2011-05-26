@@ -16,9 +16,9 @@
   <tr>
     <td><%= vaga.descricao %></td>
     <td><%= vaga.salario %></td>
-    <td><%= vaga.experiencia %></td>
+    <td><%= EXPERIENCIA_TYPES.invert[vaga.experiencia.to_s] %></td>
     <td><%= vaga.formacao %></td>
-    <td><%= vaga.cargo %></td>    
+    <td><%= vaga.cargo ? vaga.cargo.descricao : nil %></td>    
     <td><%= link_to 'Show', vaga %></td>
     <td><%= link_to 'Edit', edit_vaga_path(vaga) %></td>
     <td><%= link_to 'Destroy', vaga, :confirm => 'Are you sure?', :method => :delete %></td>

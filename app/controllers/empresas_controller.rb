@@ -16,10 +16,14 @@ class EmpresasController < ApplicationController
   # GET /empresas/1.xml
   def show
     @empresa = Empresa.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @empresa }
+    
+    if current_user.userble.id.to_s != params[:id]
+      permission_denied
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @empresa }
+      end
     end
   end
 

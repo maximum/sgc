@@ -17,9 +17,13 @@ class CandidatosController < ApplicationController
   def show
     @candidato = Candidato.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @candidato }
+    if current_user.userble.id.to_s != params[:id]
+      permission_denied
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @candidato }
+      end
     end
   end
 

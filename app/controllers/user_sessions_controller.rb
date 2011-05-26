@@ -10,8 +10,13 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Login efetuado com sucesso!"
-      redirect_back_or_default account_url
+      flash[:notice] = "Login efetuado com sucesso!"  
+            
+      if @user_session.user.userble.class.to_s == 'Candidato'
+        redirect_back_or_default candidato_url(@user_session.user.userble)
+      else
+        redirect_back_or_default empresa_url(@user_session.user.userble)
+      end
     else
       render :action => :new
     end
