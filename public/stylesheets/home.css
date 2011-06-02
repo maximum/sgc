@@ -1,0 +1,13 @@
+
+.home-img-vaga {
+	margin-left: 15%;
+}
+
+.home-img-candidato {
+	margin-left: 10%;
+}
+
+.home-img-candidato a:hover {
+	color: #fff !important;
+	background: #fff !important;
+}
