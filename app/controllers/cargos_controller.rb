@@ -26,11 +26,15 @@ class CargosController < ApplicationController
   # GET /cargos/new
   # GET /cargos/new.xml
   def new
-    @cargo = Cargo.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @cargo }
+    if current_user.userble.class.to_s == 'Empresa'      
+      @cargo = Cargo.new      
+      
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @cargo }
+      end
+    else
+      permission_denied
     end
   end
 
@@ -43,7 +47,8 @@ class CargosController < ApplicationController
   # POST /cargos.xml
   def create
     @cargo = Cargo.new(params[:cargo])
-
+    @cargo.empresa = @current_user.userble
+    
     respond_to do |format|
       if @cargo.save
         format.html { redirect_to(@cargo, :notice => 'Cargo was successfully created.') }

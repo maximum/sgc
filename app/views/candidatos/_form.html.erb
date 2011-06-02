@@ -11,10 +11,16 @@
     </div>
   <% end %>
 
+<fieldset class="float-left">
+  <legend>Informações Pessoais</legend>
   <div class="field">
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+  <div class="field">
+    <%= f.label :email, "E-mail" %><br />
+    <%= f.text_field :email %>
+  </div>  
   <div class="field">
     <%= f.label :endereco %><br />
     <%= f.text_field :endereco %>
@@ -27,6 +33,10 @@
     <%= f.label :uf, "UF" %><br />
     <%= select :candidato, :uf, UF_ADDRESS_TYPES.sort %>
   </div>
+</fieldset>
+
+<fieldset>
+  <legend>Formação e Experiência</legend>
   <div class="field">
     <%= f.label :curso %><br />
     <%= select :candidato, :curso, CURSO_TYPES.sort %>
@@ -43,12 +53,16 @@
     <%= f.label :pretencao_salarial %><br />
     <%= f.text_field :pretencao_salarial %>
   </div>
-  
+</fieldset>
+
+<fieldset class="clear-both">
+  <legend>Usuário</legend>
   <%= f.fields_for :user do |user| %>
     <%= render :partial => '/users/fields_for_form', :locals => {:f => user} %>
   <% end %>
+</fieldset>
     
   <div class="actions">
-    <%= f.submit %>
+    <%= image_submit_tag "buttonsubmit.gif" %>
   </div>
 <% end %>

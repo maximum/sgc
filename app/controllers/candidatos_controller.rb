@@ -30,12 +30,16 @@ class CandidatosController < ApplicationController
   # GET /candidatos/new
   # GET /candidatos/new.xml
   def new
-    @candidato = Candidato.new
-    @candidato.build_user
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @candidato }
+    if current_user
+      permission_denied
+    else
+      @candidato = Candidato.new
+      @candidato.build_user
+      
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @candidato }
+      end
     end
   end
 

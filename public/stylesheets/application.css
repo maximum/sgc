@@ -20,11 +20,13 @@ a {
 
 #container {
   width: 75%;
+  min-height: 450px;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+	clear: both;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -116,4 +118,15 @@ a {
   float: right;
   font-size: 12px;
   margin-bottom: 10px;
+}
+
+
+/* --- Empresa */
+
+.empresa h3 {
+	background-color: yellow;
+}
+
+.openjobs h3 {
+	background-color: yellow;
 }

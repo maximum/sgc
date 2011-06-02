@@ -16,7 +16,7 @@
     <%= f.text_field :descricao %>
   </div>
   <div class="field">
-    <%= f.label :num_vagas, "Quantidade de vagas" %><br />
+    <%= f.label :num_vagas %><br />
     <%= select(:vaga, :num_vagas, (1..99).to_a) %>
   </div>
   <div class="field">
@@ -25,7 +25,8 @@
   </div>  
   <div class="field">
     <%= f.label :cargo %><br />
-    <%= select(:vaga, :cargo_id, Cargo.all.collect {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'}) %>
+    <%#= select(:vaga, :cargo_id, Cargo.all.collect {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'}) %>
+    <%= select(:vaga, :cargo_id, @current_user.userble.cargos.map {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'} ) %>
   </div>
   <div class="field">
     <%= f.label :cidade %><br />

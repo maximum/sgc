@@ -1,8 +1,7 @@
 <%= form_for(@empresa) do |f| %>
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
-
+      <h2><%=t "activerecord.errors.template.body" %></h2>
       <ul>
       <% @empresa.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,6 +10,8 @@
     </div>
   <% end %>
 
+<fieldset class="float-left">
+  <legend>Informações Pessoais</legend>
   <div class="field">
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
@@ -31,12 +32,14 @@
     <%= f.label :uf, "Estado" %><br />
     <%= select :empresa, :uf, UF_ADDRESS_TYPES.sort %>
   </div>
-  
+</fieldset>
+<fieldset>
+  <legend>Usuário</legend>
   <%= f.fields_for :user do |user| %>
     <%= render :partial => '/users/fields_for_form', :locals => {:f => user} %>
   <% end %>  
-  
+</fieldset>
   <div class="actions">
-    <%= f.submit %>
+    <%= image_submit_tag "buttonsubmit.gif" %>
   </div>
 <% end %>

@@ -1,10 +1,10 @@
-<% title "Home Page" %>
+<% title "Bem-vindo ao SGC" %>
 
-<%= link_to 'Cadastrar Vagas', new_vaga_path %><br />
-<%#= link_to 'Cadastrar Candidatos', new_candidato_path %><br />
-
-
-
-
-<%#= link_to 'Cadastro Empresas', new_empresa_path %><br />
 <%= link_to 'Cadastrar Cargos', new_cargo_path %><br />
+
+<div>
+    
+    <%= link_to image_tag("buttonprofessional.gif", :border => 0), new_candidato_path, :class => "home-img-candidato" %>
+    <%= link_to image_tag("buttoncompany.gif", :border => 0), new_empresa_path, :class => "home-img-vaga" %><br />    
+
+</div>

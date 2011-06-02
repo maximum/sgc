@@ -17,25 +17,25 @@ class EmpresasController < ApplicationController
   def show
     @empresa = Empresa.find(params[:id])
     
-    if current_user.userble.id.to_s != params[:id]
-      permission_denied
-    else
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @empresa }
       end
-    end
   end
 
   # GET /empresas/new
   # GET /empresas/new.xml
   def new
-    @empresa = Empresa.new
-    @empresa.build_user
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @empresa }
+    if current_user
+      permission_denied
+    else
+      @empresa = Empresa.new
+      @empresa.build_user
+      
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @empresa }
+      end
     end
   end
 

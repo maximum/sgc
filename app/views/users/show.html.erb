@@ -34,4 +34,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_account_path %>
+<%= @user.userble.class == "Candidato" ? (link_to 'Edit', edit_candidato_path(:id => @user.userble.id)) : (link_to 'Edit', edit_empresa_path(:id => @user.userble.id)) %>

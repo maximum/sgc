@@ -1,10 +1,15 @@
-<%= f.label :login %><br />
-<%= f.text_field :login %>
-<%#= f.text_field :login, f.object.new_record? ? nil : :readonly => 'readonly' %><br />
-<br />
-<%= f.label :password, f.object.new_record? ? nil : "Alterar a senha" %><br />
-<%= f.password_field :password %><br />
-<br />
-<%= f.label :password_confirmation %><br />
-<%= f.password_field :password_confirmation %><br />
+<div class="field">
+  <%= f.label :login %><br />
+  <%= f.text_field :login %>
+</div>
+  
+<div class="field">  
+<%#= f.text_field :login, f.object.new_record? ? nil : :readonly => 'readonly' %>
+  <%= f.label :password, f.object.new_record? ? "Senha" : "Alterar a senha" %><br />
+  <%= f.password_field :password %>
+</div>
+<div class="field">
+  <%= f.label :password_confirmation, "Confirmação de senha" %><br />
+  <%= f.password_field :password_confirmation %><br />
+</div>
 

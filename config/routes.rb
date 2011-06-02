@@ -5,7 +5,7 @@ Sgc::Application.routes.draw do
   resources :vagas
   
   resource :user_session
-  resource :account, :controller => "users"
+#  resource :account, :controller => "users"
 
   resources :users
   

@@ -6,7 +6,6 @@ pre {
 
 a { color: #000; }
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -25,7 +24,7 @@ div.field, div.actions {
 }
 
 #error_explanation {
-  width: 450px;
+  width: 780px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
@@ -47,4 +46,28 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+fieldset {
+	width: 350px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+}
+
+.float-left {
+	float: left;
+}
+
+.clear-both {
+	clear: both;
+}
+
+.actions {
+	min-height: 30px;
+	text-align: center;
+	clear: both;
+}
+
+.field input, .field select {
+	width: 250px;	
 }
