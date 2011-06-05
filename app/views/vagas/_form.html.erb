@@ -1,7 +1,7 @@
 <%= form_for(@vaga) do |f| %>
   <% if @vaga.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@vaga.errors.count, "error") %> prohibited this vaga from being saved:</h2>
+      <h2><%= pluralize(@vaga.errors.count, "error") %> <%= @vaga.errors.count == 1 ? "evitou" : "evitaram" %> o cadastro da vaga:</h2>
 
       <ul>
       <% @vaga.errors.full_messages.each do |msg| %>
@@ -11,30 +11,35 @@
     </div>
   <% end %>
 
+<fieldset class="float-left">
+  <legend>Informações Básicas</legend>
   <div class="field">
     <%= f.label :descricao %><br />
     <%= f.text_field :descricao %>
   </div>
   <div class="field">
+    <%= f.label :cargo %><br />
+    <%= select(:vaga, :cargo_id, @current_user.userble.cargos.map {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'} ) %>
+    </div>
+  <div class="field">
     <%= f.label :num_vagas %><br />
     <%= select(:vaga, :num_vagas, (1..99).to_a) %>
-  </div>
-  <div class="field">
-    <%= f.label :uf %><br />
-    <%= select :vaga, :uf, UF_ADDRESS_TYPES.sort, {:include_blank => 'Selecione um estado'}%>
-  </div>  
-  <div class="field">
-    <%= f.label :cargo %><br />
-    <%#= select(:vaga, :cargo_id, Cargo.all.collect {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'}) %>
-    <%= select(:vaga, :cargo_id, @current_user.userble.cargos.map {|c| [c.descricao, c.id]}, {:include_blank => 'Selecione um cargo'} ) %>
   </div>
   <div class="field">
     <%= f.label :cidade %><br />
     <%= f.text_field :cidade %>
   </div>
   <div class="field">
+    <%= f.label :uf %><br />
+    <%= select :vaga, :uf, UF_ADDRESS_TYPES.sort, {:include_blank => 'Selecione um estado'}%>
+  </div> 
+
+</fieldset>
+<fieldset>
+  <legend>Informações Adicionais</legend>
+  <div class="field">
     <%= f.label :salario %><br />
-    <%= f.text_field :salario %>
+    R$ <%= f.text_field :salario %>
   </div>
   <div class="field">
     <%= f.label :experiencia %><br />
@@ -50,11 +55,12 @@
   </div>
   <div class="field">
     <%= f.label :data_limite %><br />
-    <%= datetime_select("vaga", "data_limite", :default => 3.days.from_now) %>
+    <%= datetime_select("vaga", "data_limite", :default => 3.days.from_now, :class => 'ddf') %>
   </div>
-    
+</fieldset>
   <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= image_submit_tag "buttonsubmit.gif" %><br />
+    ou <%= link_to 'Voltar', current_user.userble %>
   </div>
 <% end %>

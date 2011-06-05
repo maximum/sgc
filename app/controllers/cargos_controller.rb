@@ -51,7 +51,7 @@ class CargosController < ApplicationController
     
     respond_to do |format|
       if @cargo.save
-        format.html { redirect_to(@cargo, :notice => 'Cargo was successfully created.') }
+        format.html { redirect_to(current_user.userble, :notice => 'Cargo criado com sucesso.') }
         format.xml  { render :xml => @cargo, :status => :created, :location => @cargo }
       else
         format.html { render :action => "new" }
@@ -67,7 +67,7 @@ class CargosController < ApplicationController
 
     respond_to do |format|
       if @cargo.update_attributes(params[:cargo])
-        format.html { redirect_to(@cargo, :notice => 'Cargo was successfully updated.') }
+        format.html { redirect_to(current_user.userble, :notice => 'Cargo atualizado com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,7 +83,7 @@ class CargosController < ApplicationController
     @cargo.destroy
 
     respond_to do |format|
-      format.html { redirect_to(cargos_url) }
+      format.html { redirect_to(current_user.userble) }
       format.xml  { head :ok }
     end
   end

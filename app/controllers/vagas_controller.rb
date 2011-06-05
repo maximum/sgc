@@ -47,7 +47,7 @@ class VagasController < ApplicationController
 
     respond_to do |format|
       if @vaga.save
-        format.html { redirect_to(@vaga, :notice => 'Vaga was successfully created.') }
+        format.html { redirect_to(@vaga, :notice => 'Vaga cadastrada com sucesso.') }
         format.xml  { render :xml => @vaga, :status => :created, :location => @vaga }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class VagasController < ApplicationController
 
     respond_to do |format|
       if @vaga.update_attributes(params[:vaga])
-        format.html { redirect_to(@vaga, :notice => 'Vaga was successfully updated.') }
+        format.html { redirect_to(@vaga, :notice => 'Vaga atualizada com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

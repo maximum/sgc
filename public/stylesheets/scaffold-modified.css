@@ -49,7 +49,7 @@ div.field, div.actions {
 }
 
 fieldset {
-	width: 350px;
+	width: 385px;
 	margin-right: 50px;
 	margin-bottom: 10px;
 }
@@ -68,6 +68,7 @@ fieldset {
 	clear: both;
 }
 
-.field input, .field select {
+.field input type, .field select {
 	width: 250px;	
 }
+

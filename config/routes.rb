@@ -2,17 +2,19 @@ Sgc::Application.routes.draw do
   resources :candidatos
   resources :cargos
   resources :empresas
-  resources :vagas
+  resources :vagas  
   
   resource :user_session
-#  resource :account, :controller => "users"
+  resource :account, :controller => "users"
 
   resources :users
   
   match "login", :to => "user_sessions#new", :as => "login"
   match "logout", :to => "user_sessions#destroy", :as => "logout"
   
-  get "home/index"  
+  match "api/:cnpj", :to => "candidaturas#api"
+  
+  get "home/index"
   
   root :to => "home#index"
 

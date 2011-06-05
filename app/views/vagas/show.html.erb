@@ -1,8 +1,48 @@
-<p id="notice"><%= notice %></p>
+<fieldset class="float-left">
+  <legend>Informações Básicas</legend>
+  <div class="field">
+    <b>Descricao:</b>
+    <%= @vaga.descricao %>
+  </div>
+  <div class="field">
+    <b>Cargo:</b>
+  <%= @vaga.cargo ? @vaga.cargo.descricao : nil %>
+  </div>  
+  <div class="field">
+    <b>Quantidade de vaga(s):</b>
+    <%= @vaga.num_vagas %>
+  </div>
+  <div class="field">
+    <b>Cidade:</b>
+    <%= @vaga.cidade %>, <%= UF_ADDRESS_TYPES.invert[@vaga.uf.to_s][0..2] %>
+  </div>
+</fieldset>
 
+<fieldset>
+  <legend>Informações Adicionais</legend>
+  <div class="field">
+    <b>Salário:</b>
+    R$ <%= @vaga.salario %>
+  </div>
+  <div class="field">
+    <b>Curso:</b>
+    <%= CURSO_TYPES.invert[@vaga.experiencia.to_s] %><br />
+  </div>
+  <div class="field">
+    <b>Formação:</b>
+    <%= FORMACAO_TYPES.invert[@vaga.formacao.to_s][6..30] %><br />
+  </div>
+  <div class="field">
+    <b>Experiência:</b>
+    <%= EXPERIENCIA_TYPES.invert[@vaga.experiencia.to_s] %><br />
+  </div>
+  <div class="field">
+    <b>Data limite (expiração):</b>
+    <%= @vaga.data_limite %>
+  </div>
+</fieldset>
 <p>
-  <b>Descricao:</b>
-  <%= @vaga.descricao %>
+
 </p>
 
 <p>

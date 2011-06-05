@@ -1,61 +1,64 @@
-<p id="notice"><%= notice %></p>
-
-<div class="topMenu">
-  <ul>
-    <li><%= link_to 'Editar', edit_empresa_path(@empresa) %></li>
-    <li><%= link_to 'Cadastrar Cargos', new_cargo_path %></li>
-    <li><%= link_to 'Cadastrar Vagas', new_vaga_path %></li>
-  </ul>
-</div>
-
 <div class="empresa">
-
-<div class="openjobs">
-  <h3>Vagas em aberto</h3>
+  <h3>Menu</h3>
+  <div class="topMenu">
+    <ul>
+      <li><%= link_to 'Editar empresa', edit_empresa_path(@empresa) %></li>
+      <li><%= link_to 'Cadastrar Cargos', new_cargo_path %></li>
+      <li><%= link_to 'Cadastrar Vagas', new_vaga_path %></li>
+    </ul>
+  </div>
   
+  <div class="openjobs">
+    <h3>Vagas em aberto</h3>
+    <% if @empresa.vagas.each.count > 0 then %>
+    <table>
+      <tr>
+        <th>Descriacao</th>
+        <th>Salario</th>
+        <th>Experiencia</th>
+        <th>Formacao</th>
+        <th>Cargo</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @empresa.vagas.each do |vaga| %>
+      <tr>
+        <td><%= vaga.descricao %></td>
+        <td>R$ <%= vaga.salario %></td>
+        <td><%= EXPERIENCIA_TYPES.invert[vaga.experiencia.to_s] %></td>
+        <td><%= FORMACAO_TYPES.invert[vaga.formacao.to_s][6..30] %></td>
+        <td><%= vaga.cargo ? vaga.cargo.descricao : nil %></td>    
+        <td><%= link_to 'Visualizar', vaga %></td>
+        <td><%= link_to 'Editar', edit_vaga_path(vaga) %></td>
+        <td><%= link_to 'Remover', vaga, :confirm => 'Tem certeza que deseja remover esta vaga?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </table>
+    <% else %>
+    Nenhuma vaga em aberto.
+    <% end %>
+  </div>
+
+  <h3>Cargos disponíveis</h3>
+  <% if @empresa.cargos.each.count > 0 then %>
   <table>
     <tr>
-      <th>Descriacao</th>
-      <th>Salario</th>
-      <th>Experiencia</th>
-      <th>Formacao</th>
       <th>Cargo</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
 
-  <% @empresa.vagas.each do |vaga| %>
+  <% @empresa.cargos.each do |cargo| %>
     <tr>
-      <td><%= vaga.descricao %></td>
-      <td>R$ <%= vaga.salario %></td>
-      <td><%= EXPERIENCIA_TYPES.invert[vaga.experiencia.to_s] %></td>
-      <td><%= FORMACAO_TYPES.invert[vaga.formacao.to_s][6..30] %></td>
-      <td><%= vaga.cargo ? vaga.cargo.descricao : nil %></td>    
-      <td><%= link_to 'Visualizar', vaga %></td>
-      <td><%= link_to 'Editar', edit_vaga_path(vaga) %></td>
-      <td><%= link_to 'Remover', vaga, :confirm => 'Você está certo disto?', :method => :delete %></td>
+      <td style="width: 70%;"><%= cargo.descricao %></td>
+      <td><%= link_to 'Editar', edit_cargo_path(cargo) %></td>
+      <td><%= link_to 'Remover', cargo, :confirm => 'Tem certeza que deseja remover este cargo?', :method => :delete %></td>
     </tr>
+  <% end %>
+  <% else %>
+  Nenum cargo cadastrado.
   <% end %>
   </table>
 </div>
-
-<h3>Cargos disponíveis</h3>
-<table>
-  <tr>
-    <th>Cargo</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @empresa.cargos.each do |cargo| %>
-  <tr>
-    <td><%= cargo.descricao %></td>
-    <td><%= link_to 'Editar', edit_cargo_path(cargo) %></td>
-    <td><%= link_to 'Remover', cargo, :confirm => 'Você está certo disto?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-</div>
-

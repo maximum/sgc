@@ -8,11 +8,11 @@
     <%= yield(:head) %>
 </head>
 <body>	
-	<div id="container">	
+	<div id="container">
   <div id="user_nav">
     <% if current_user %>
-          Bem-vindo <%=h current_user.login %>!
-      <%= current_user.userble.class == "Candidato" ? (link_to "Editar usuário", edit_candidato_path) : (link_to "Editar usuário", edit_empresa_path) %> |
+          Bem-vindo <%=h current_user.userble.nome %>!
+      <%#= current_user.userble.class == "Candidato" ? (link_to "Editar usuário", edit_candidato_path) : (link_to "Editar usuário", edit_empresa_path) %> |
       <%= link_to "Logout", logout_path %>
     <% else %>
       <%= link_to "Registrar Candidato", new_candidato_path %> |      
@@ -23,7 +23,7 @@
   <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <%- end -%>
-		<h1><a href="/">SGC - Sistema de Gestão de Carreira</a></h1>	  
+		<h1><%= if current_user then link_to "SGC - Sistema de Gestão de Carreira", current_user.userble end %></h1>
   <%- if show_title? -%>
     <h1><%=h yield(:title) %></h1>
   <%- end -%>

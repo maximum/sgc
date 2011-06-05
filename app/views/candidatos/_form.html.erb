@@ -51,7 +51,7 @@
   </div>
   <div class="field">
     <%= f.label :pretencao_salarial %><br />
-    <%= f.text_field :pretencao_salarial %>
+    R$ <%= f.text_field :pretencao_salarial %>
   </div>
 </fieldset>
 
@@ -63,6 +63,7 @@
 </fieldset>
     
   <div class="actions">
-    <%= image_submit_tag "buttonsubmit.gif" %>
+    <%= image_submit_tag "buttonsubmit.gif" %><br />
+    ou <%= current_user ? (link_to 'Voltar', current_user.userble) : (link_to 'Voltar', home_index_path) %>
   </div>
 <% end %>

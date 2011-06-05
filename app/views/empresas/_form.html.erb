@@ -40,6 +40,7 @@
   <% end %>  
 </fieldset>
   <div class="actions">
-    <%= image_submit_tag "buttonsubmit.gif" %>
+    <%= image_submit_tag "buttonsubmit.gif" %><br />
+    ou <%= current_user ? (link_to 'Voltar', current_user.userble) : (link_to 'Voltar', home_index_path) %>
   </div>
 <% end %>

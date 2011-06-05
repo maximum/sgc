@@ -123,10 +123,30 @@ a {
 
 /* --- Empresa */
 
+.candidato h3 {
+	background-color: yellow;
+}
+
 .empresa h3 {
 	background-color: yellow;
 }
 
 .openjobs h3 {
 	background-color: yellow;
+}
+
+.td-dark {
+	background-color: #cecece;
+}
+
+#vaga_data_limite_1i {
+	width: 70px;
+}
+
+#vaga_data_limite_2i {
+	width: 100px;
+}
+
+#vaga_data_limite_3i, #vaga_data_limite_4i, #vaga_data_limite_5i {
+	width: 50px;
 }

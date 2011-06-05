@@ -55,7 +55,7 @@ class CandidatosController < ApplicationController
 
     respond_to do |format|
       if @candidato.save
-        format.html { redirect_to(@candidato, :notice => 'Candidato was successfully created.') }
+        format.html { redirect_to(@candidato, :notice => 'Seu cadastro foi registrado com sucesso.') }
         format.xml  { render :xml => @candidato, :status => :created, :location => @candidato }
       else
         format.html { render :action => "new" }
@@ -71,7 +71,7 @@ class CandidatosController < ApplicationController
 
     respond_to do |format|
       if @candidato.update_attributes(params[:candidato])
-        format.html { redirect_to(@candidato, :notice => 'Candidato was successfully updated.') }
+        format.html { redirect_to(@candidato, :notice => 'Seu usuário foi atualizado com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
