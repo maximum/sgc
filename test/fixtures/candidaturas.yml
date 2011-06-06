@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  data: 2011-06-03 17:43:38
+  candidato_id: 1
+  vaga_id: 1
+  empresa_id: 1
+  cargo_id: 1
+  accepted: false
+
+two:
+  data: 2011-06-03 17:43:38
+  candidato_id: 1
+  vaga_id: 1
+  empresa_id: 1
+  cargo_id: 1
+  accepted: false
