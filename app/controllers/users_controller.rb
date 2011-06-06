@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Usuário registrado com sucesso!"
-      redirect_back_or_default account_url
+      redirect_back_or_default current_user.userble
     else
       render :action => :new
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
       flash[:notice] = "Usuário atualizado com sucesso!"
-      redirect_to account_url
+      redirect_to current_user.userble
     else
       render :action => :edit
     end

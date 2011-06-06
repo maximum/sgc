@@ -13,9 +13,9 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login efetuado com sucesso!"  
             
       if @user_session.user.userble.class.to_s == 'Candidato'
-        redirect_back_or_default candidato_url(@user_session.user.userble)
+        redirect_to candidato_url(@user_session.user.userble)
       else
-        redirect_back_or_default empresa_url(@user_session.user.userble)
+        redirect_to empresa_url(@user_session.user.userble)
       end
     else
       render :action => :new

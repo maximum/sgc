@@ -41,10 +41,10 @@ CURSO_TYPES = {
   "Comunicação Social"        => '4',
   "Direito"                   => '5',
   "Engenharia Civil"          => '6',
-  "Engenharia de Computação"  => '5',
-  "Psicologia"                => '6',
-  "Publicidade e Propaganda"  => '7',
-  "Sistemas de Informação"    => '8'
+  "Engenharia de Computação"  => '7',
+  "Psicologia"                => '8',
+  "Publicidade e Propaganda"  => '9',
+  "Sistemas de Informação"    => '10'
 }
 
 FORMACAO_TYPES = {

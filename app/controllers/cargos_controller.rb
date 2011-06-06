@@ -83,7 +83,7 @@ class CargosController < ApplicationController
     @cargo.destroy
 
     respond_to do |format|
-      format.html { redirect_to(current_user.userble) }
+      format.html { redirect_to(current_user.userble, :notice => 'Cargo removido com sucesso.') }
       format.xml  { head :ok }
     end
   end

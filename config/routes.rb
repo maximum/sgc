@@ -12,7 +12,9 @@ Sgc::Application.routes.draw do
   match "login", :to => "user_sessions#new", :as => "login"
   match "logout", :to => "user_sessions#destroy", :as => "logout"
   
-  match "api/:cnpj", :to => "candidaturas#api"
+  match "api/:cnpj/:cargo/:qtde", :to => "candidaturas#candidatos_by_cnpj_cargo_qte"
+  match "api/:cnpj/:cargo", :to => "candidaturas#candidatos_by_cnpj_cargo_qte"
+  match "api/:cnpj", :to => "candidaturas#candidatos_by_cnpj"
   
   get "home/index"
   

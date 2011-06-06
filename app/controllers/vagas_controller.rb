@@ -63,7 +63,7 @@ class VagasController < ApplicationController
 
     respond_to do |format|
       if @vaga.update_attributes(params[:vaga])
-        format.html { redirect_to(@vaga, :notice => 'Vaga atualizada com sucesso.') }
+        format.html { redirect_to(current_user.userble, :notice => 'Vaga atualizada com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +79,7 @@ class VagasController < ApplicationController
     @vaga.destroy
 
     respond_to do |format|
-      format.html { redirect_to(vagas_url) }
+      format.html { redirect_to(current_user.userble, :notice => 'Vaga removida com sucesso.') }
       format.xml  { head :ok }
     end
   end

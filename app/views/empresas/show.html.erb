@@ -1,12 +1,34 @@
 <div class="empresa">
-  <h3>Menu</h3>
+  <fieldset class="float-left">
+    <legend>Informações</legend>
+    <div class="field">
+      <b>Nome:</b>
+      <%= @empresa.nome %><br />
+    </div>
+    <div class="field">
+      <b>CNPJ:</b>
+      <%= @empresa.cnpj %><br />
+    </div>  
+    <div class="field">
+      <b>Endereço:</b>
+      <%= @empresa.endereco %><br />
+    </div>
+    <div class="field">
+      <b>Cidade:</b>
+  <%= @empresa.cidade %>, <%= UF_ADDRESS_TYPES.invert[@empresa.uf.to_s][0..2]%><br />
+    </div>
+  </fieldset>
+  
   <div class="topMenu">
+    <br />
     <ul>
       <li><%= link_to 'Editar empresa', edit_empresa_path(@empresa) %></li>
       <li><%= link_to 'Cadastrar Cargos', new_cargo_path %></li>
       <li><%= link_to 'Cadastrar Vagas', new_vaga_path %></li>
     </ul>
   </div>
+  
+  <div class="clear-both"></div>
   
   <div class="openjobs">
     <h3>Vagas em aberto</h3>

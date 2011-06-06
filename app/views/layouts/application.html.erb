@@ -11,7 +11,7 @@
 	<div id="container">
   <div id="user_nav">
     <% if current_user %>
-          Bem-vindo <%=h current_user.userble.nome %>!
+          Bem-vindo <b><%=h current_user.userble.nome %></b>!
       <%#= current_user.userble.class == "Candidato" ? (link_to "Editar usuário", edit_candidato_path) : (link_to "Editar usuário", edit_empresa_path) %> |
       <%= link_to "Logout", logout_path %>
     <% else %>

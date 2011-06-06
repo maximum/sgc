@@ -58,6 +58,10 @@ fieldset {
 	float: left;
 }
 
+.float-right {
+	float: right;
+}
+
 .clear-both {
 	clear: both;
 }
