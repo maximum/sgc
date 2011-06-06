@@ -17,6 +17,8 @@ class CandidatosController < ApplicationController
   def show
     @candidato = Candidato.find(params[:id])
 
+    @candidaturas = Candidatura.find_by_candidato_id(current_user.userble)
+
     if current_user.userble.id.to_s != params[:id]
       permission_denied
     else

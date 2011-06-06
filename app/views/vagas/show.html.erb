@@ -41,34 +41,6 @@
     <%= @vaga.data_limite %>
   </div>
 </fieldset>
-<p>
 
-</p>
-
-<p>
-  <b>Salario:</b>
-  <%= @vaga.salario %>
-</p>
-
-<p>
-  <b>Experiencia:</b>
-  <%= @vaga.experiencia %>
-</p>
-
-<p>
-  <b>Formacao:</b>
-  <%= @vaga.formacao %>
-</p>
-
-<p>
-  <b>Cargo:</b>
-  <%= @vaga.cargo ? @vaga.cargo.descricao : nil %>
-</p>
-
-<p>
-  <b>Empresa:</b>
-  <%#= @vaga.empresa.nome %>
-</p>
-
-<%= link_to 'Edit', edit_vaga_path(@vaga) %> |
-<%= link_to 'Back', vagas_path %>
+<%= link_to 'Editar', edit_vaga_path(@vaga) %> |
+<%= link_to 'Back', current_user.userble %>
